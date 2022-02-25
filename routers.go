@@ -7,10 +7,11 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
-	"pixiv"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/shewinder/pixiv"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"

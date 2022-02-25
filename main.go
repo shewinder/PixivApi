@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"os"
-	"pixiv"
 	"strings"
 	"time"
+
+	"github.com/shewinder/pixiv"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
