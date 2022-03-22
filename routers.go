@@ -20,12 +20,30 @@ import (
 func getIllustRanking(c *gin.Context) {
 	date := c.DefaultQuery("date", time.Now().AddDate(0, 0, -1).Format("2006-1-2")) // 日期默认为昨天
 	mode := c.DefaultQuery("mode", "day")                                           // mode默认day
-	offset := c.DefaultQuery("offset", "30")
-	m, err := pixiv.IllustRanking(mode, date, offset)
-	if err != nil {
-		log.Errorf("%v", err)
+	num := c.DefaultQuery("num", "30")
+	n, _ := strconv.Atoi(num)
+	off := 0
+	illusts := []pixiv.Illust{}
+	for n > 0 {
+		page, err := pixiv.IllustRanking(mode, date, strconv.Itoa(off))
+		if len(page) == 0 {
+			break
+		}
+		fmt.Println(page[0].Title)
+		if err != nil {
+			log.Errorf("%v", err)
+			break
+		}
+		for _, illust := range page {
+			illusts = append(illusts, *illust)
+			n--
+			if n <= 0 {
+				break
+			}
+			off++
+		}
 	}
-	c.JSON(http.StatusOK, m)
+	c.JSON(http.StatusOK, illusts)
 }
 
 func getIllustDetail(c *gin.Context) {

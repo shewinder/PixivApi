@@ -37,7 +37,6 @@ func main() {
 	log.Info("Pixiv APi is runing")
 	gin.SetMode(gin.ReleaseMode)
 	conf := parse("config.yml")
-	//fmt.Println(conf.RefreshToken)
 	pixiv.InitAuth(conf.RefreshToken)
 	go func() {
 		ticker := time.NewTicker(3000 * time.Second)
@@ -55,6 +54,5 @@ func main() {
 	router.GET("/pixiv/following", getIllustFollow)
 	router.GET("/pixiv/user", getUserIllusts)
 	router.GET("/pixiv/:file", getPidFile)
-
 	router.Run(":9500")
 }
