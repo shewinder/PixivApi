@@ -54,5 +54,7 @@ func main() {
 	router.GET("/pixiv/following", getIllustFollow)
 	router.GET("/pixiv/user", getUserIllusts)
 	router.GET("/pixiv/:file", getPidFile)
+	router.GET("/pixiv/ugoira", get_ugoira_info)
+	router.GET("/pixiv/user_bookmarks", getUserBookmarks)
 	router.Run(":9500")
 }

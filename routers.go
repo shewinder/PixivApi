@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/shewinder/pixiv"
 	"bytes"
 	"fmt"
 	"io"
@@ -10,8 +11,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/shewinder/pixiv"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
@@ -25,11 +24,11 @@ func getIllustRanking(c *gin.Context) {
 	off := 0
 	illusts := []pixiv.Illust{}
 	for n > 0 {
-		page, err := pixiv.IllustRanking(mode, date, strconv.Itoa(off))
+		i, err := pixiv.IllustRanking(mode, date, strconv.Itoa(off))
+		page := i.Illusts
 		if len(page) == 0 {
 			break
 		}
-		fmt.Println(page[0].Title)
 		if err != nil {
 			log.Errorf("%v", err)
 			break
@@ -51,6 +50,8 @@ func getIllustDetail(c *gin.Context) {
 	m, err := pixiv.IllustDetail(pid)
 	if err != nil {
 		log.Errorf("%v", err)
+		c.JSON(http.StatusNotFound, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, m)
 }
@@ -127,4 +128,21 @@ func getPidFile(c *gin.Context) {
 		log.Infof("%v downloaded", file)
 	}
 	c.File(fmt.Sprintf("image/%s", file))
+}
+
+func get_ugoira_info(c *gin.Context) {
+	pid := c.Query("illust_id")
+	data, _ := pixiv.UgoiraMeta(pid)
+	c.JSON(http.StatusOK, data)
+}
+
+func getUserBookmarks(c *gin.Context) {
+	userId := c.Query("user_id")
+	restrict := c.DefaultQuery("restrict", "public")
+	offset := c.DefaultQuery("offset", "0")
+	m, err := pixiv.UserBookmarkIllust(userId, restrict, offset)
+	if err != nil {
+		log.Errorf("%v", err)
+	}
+	c.JSON(http.StatusOK, m)
 }

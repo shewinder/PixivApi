@@ -28,10 +28,12 @@ github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 h1:Esafd1046DLD
 github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/shewinder/pixiv v0.0.0-20220225105326-5daf61d5bdb6 h1:xbqU03yFfWxRZIycNQGhF5ZprIMT0VYXku8xEVc054k=
-github.com/shewinder/pixiv v0.0.0-20220225105326-5daf61d5bdb6/go.mod h1:S5kcIunuOnln2YBdEpIxMBX2JBr/4dMnT2Vwutm68CQ=
 github.com/shewinder/pixiv v0.0.0-20220320170150-f3a4c6ddfb25 h1:Gtzjgh66jElI+2vkuU8ejOa3iePGptt/CIKh6s3SQZs=
 github.com/shewinder/pixiv v0.0.0-20220320170150-f3a4c6ddfb25/go.mod h1:S5kcIunuOnln2YBdEpIxMBX2JBr/4dMnT2Vwutm68CQ=
+github.com/shewinder/pixiv v0.0.0-20220426162329-03c7250d214d h1:N3mDkXj79YvIYYYErqoa5wnLtUNStrQ4JkAR4jd+Hrc=
+github.com/shewinder/pixiv v0.0.0-20220426162329-03c7250d214d/go.mod h1:H2cMAck0hFMzqxkDYu+LxrJzVf6iCSXMP2e9MIUDYdc=
+github.com/shewinder/pixiv v0.0.0-20220428085528-b9063b4d136e h1:hEdAtaOL2yo9lbfV1iAjc0uhRPlNtd8ggXc9pu9FoQs=
+github.com/shewinder/pixiv v0.0.0-20220428085528-b9063b4d136e/go.mod h1:H2cMAck0hFMzqxkDYu+LxrJzVf6iCSXMP2e9MIUDYdc=
 github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=
 github.com/sirupsen/logrus v1.8.1/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
@@ -40,6 +42,7 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/ugorji/go v1.1.7 h1:/68gy2h+1mWMrwZFeD1kQialdSzAb432dtpeJ42ovdo=
 github.com/ugorji/go v1.1.7/go.mod h1:kZn38zHttfInRq0xu/PH0az30d+z6vm202qpg1oXVMw=
 github.com/ugorji/go/codec v1.1.7 h1:2SvQaVZ1ouYrrKKwoSk2pzd4A9evlKJb9oTL+OaLUSs=
